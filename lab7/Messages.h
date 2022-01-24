@@ -10,9 +10,8 @@ class Messages
 private:
 	string toWhom = ""; //Кому сообщение
 	string fromWhom = ""; //От кого сообщение
-	string message = ""; //Текст сообщения
+	string message = ""; //Текст сообщение
 public:
-
 	Messages(); //Конструктор
 
 	~Messages(); //Деструктор
@@ -37,3 +36,4 @@ public:
 
 	void DeleteMessages(); //Удаление данных о сообщении
 };
+

@@ -143,6 +143,7 @@
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="Friends.cpp" />
     <ClCompile Include="lab7.cpp" />
+    <ClCompile Include="Like.cpp" />
     <ClCompile Include="Messages.cpp" />
     <ClCompile Include="Music.cpp" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="Account.h" />
     <ClInclude Include="Figure.h" />
     <ClInclude Include="Friends.h" />
+    <ClInclude Include="Like.h" />
     <ClInclude Include="Messages.h" />
     <ClInclude Include="Music.h" />
   </ItemGroup>

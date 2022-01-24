@@ -16,6 +16,7 @@ private:
 	string surfromWhom = ""; //Фамилия
 	string email = ""; //Почта
 	string password = ""; //Пароль
+
 public:
 	//FIGURE
 	int FigureFigure = 0; //Фигура
@@ -48,6 +49,4 @@ public:
 	void OutputAccount(); //Вывод данных о аккаунте
 
 	void DeleteAccount(); //Удаление данных о аккаунта
-
-
 };

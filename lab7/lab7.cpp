@@ -3,11 +3,13 @@
 #include "Friends.h"
 #include "Music.h"
 #include "Messages.h"
+#include "Like.h"
 #include "string"
 #include "Windows.h"
-
+Like* Like::lastLike = NULL;
 int main()
 {
+	
 	setlocale(LC_ALL, "Russian");
 	cout << "1)" << endl;
 	cout << "=================================================================" << endl;
@@ -43,5 +45,24 @@ int main()
 	cout << *figure_p << endl;
 	cout << *color_p << endl;
 
-	
+	cout << "\n2)" << endl;
+	cout << "=================================================================" << endl;
+	cout << "Тест списка оценок с использованием указателя \'this\'" << endl;
+
+	// Формирование объектов класса Mark:
+	Like A(2);
+	Like B(3);
+	Like C(4);
+	Like D(5);
+
+	// Вызов статической компанентной функции:
+ 	Like::reprint();
+
+	// Включение созданных компанентов в двусвязанный список:
+	A.Add(); B.Add(); C.Add(); D.Add();
+
+	// Печать в обратном порядке значений элементов списка:
+	Like::reprint();
+
+
 }
