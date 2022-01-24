@@ -45,6 +45,7 @@ public:
 
 	void DeleteMessages(); //Удаление данных о сообщении
 
+	// Дружественная функция обмена полями классов Account, Figure, Friends, Music, Messages, Like
 	friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);
 };
 

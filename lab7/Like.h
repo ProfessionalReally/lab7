@@ -55,6 +55,16 @@ public:
     // Вывод на дисплей содержимого списка
     static void reprint(void);
 
+    // Дружественная функция обмена полями классов Account, Figure, Friends, Music, Messages, Like
     friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);
+
+    // Перегрузка оператора '+' (Like + int)
+    friend Like operator+(const Like& like, int AMOUNT);
+
+    // Перегрузка префиксного оператора '++'
+    Like& operator++();
+
+    // Перегрузка постфиксного оператора '++'
+    Like operator++ (int);
 };
 

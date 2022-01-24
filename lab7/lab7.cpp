@@ -88,4 +88,33 @@ int main()
 	pushing(MyAccount, MyFigure, MyFriends, MyMusic, MyMessages, MyLike);
 
 	MyAccount.OutputAccount();
+
+	cout << "4)" << endl;
+	cout << "=================================================================" << endl;
+	cout << "Перегрузка оператора \'+\' для класса Like" << endl;
+	Like likePoor(2);
+	likePoor.Displayamount();
+	cout << "Прибавим 2 лайка:" << endl;
+	likePoor = likePoor + 2;
+	likePoor.Displayamount();
+	cout << "\n" << endl;
+	cout << "Перегрузка оператора \'++\' (два варианта, префиксный и постфиксный) \n для класса Like" << endl;
+	likePoor.Set(2);
+	likePoor.Displayamount();
+	cout << endl;
+	cout << "Использование оператора \'++\' (префиксный):" << endl;
+	++likePoor;
+	likePoor.Displayamount();
+	cout << endl;
+	cout << "Использование оператора \'++\' (постфиксный):" << endl;
+	likePoor++;
+	likePoor.Displayamount();
+
+	cout << "5)" << endl;
+	cout << "=================================================================" << endl;
+	cout << "Заменить массивы char на std::string, продемонстрировать работу с этим классом" << endl;
+	cout << "Тест ввода в переменную типа std::string на примере ввода друга:" << endl;
+	MyFriends.InputFriends();
+	MyFriends.OutputFriends();
+
 }

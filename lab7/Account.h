@@ -61,7 +61,7 @@ public:
 
 	void DeleteAccount(); //Удаление данных о аккаунта
 
-	// Дружественная функция обмена кординатами классов Account, Figure, Friends, Music, Messages
+	// Дружественная функция обмена полями классов Account, Figure, Friends, Music, Messages, Like
 	friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);
 
 };

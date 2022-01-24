@@ -27,7 +27,7 @@ int Like::Get()
 void Like::InpLike()
 {
     string Lik;
-    cout << "Введите оценку: ";
+    cout << "Please enter a amount likes: ";
     cin >> Lik;
     amount = stoi(Lik);
     cout << endl;
@@ -36,7 +36,7 @@ void Like::InpLike()
 // Вывод данных из структуры
 void Like::Displayamount()
 {
-    cout << "Оценка: " << amount << endl;
+    cout << "Amount likes: " << amount << endl;
 
 }
 
@@ -62,11 +62,11 @@ void Like::reprint(void)
     uk = lastLike;
     if (uk == NULL)
     {
-        cout << "Список пуст!";
+        cout << "List is empty!";
         return;
     }
     else
-        cout << "\nСодержимое списка:\n";
+        cout << "\nList content :\n";
 
     // Цикл печати в обратном порядке значений элементов списка:
     while (uk != NULL)
@@ -80,4 +80,24 @@ void Like::reprint(void)
 Like::~Like()
 {
     ;
+}
+
+// Перегрузка оператора '+' (Like + int)
+Like operator+(const Like& like, int AMOUNT)
+{
+        return Like(like.amount + AMOUNT);
+}
+
+// Перегрузка префиксного оператора '++'
+Like& Like::operator++()
+{
+    amount += 1;
+    return *this;
+}
+// Перегрузка постфиксного оператора '++'
+Like Like::operator++ (int)
+{
+    Like m1 = *this;
+    ++* this;
+    return m1;
 }

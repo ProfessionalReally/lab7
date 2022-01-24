@@ -43,6 +43,7 @@ public:
 
 	void DeleteFigure(); //Удаление данных о фигуре
 
+	// Дружественная функция обмена полями классов Account, Figure, Friends, Music, Messages, Like
 	friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);
 };
 

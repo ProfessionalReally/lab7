@@ -68,8 +68,8 @@ void Account::OutputAccount() //Вывод данных о аккаунте
 	}
 	else
 	{
-		cout << "fromWhom: " << name << endl;
-		cout << "SurfromWhom: " << surname << endl;
+		cout << "Name: " << name << endl;
+		cout << "Surname: " << surname << endl;
 		cout << "Email: " << email << endl;
 		cout << "Password: " << password << endl;
 	}
