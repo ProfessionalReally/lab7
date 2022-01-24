@@ -49,7 +49,7 @@ int main()
 	cout << "=================================================================" << endl;
 	cout << "Тест списка оценок с использованием указателя \'this\'" << endl;
 
-	// Формирование объектов класса Mark:
+	// Формирование объектов класса Like:
 	Like A(2);
 	Like B(3);
 	Like C(4);
@@ -64,5 +64,28 @@ int main()
 	// Печать в обратном порядке значений элементов списка:
 	Like::reprint();
 
+	cout << "\n\n3)" << endl;
+	cout << "=================================================================" << endl;
+	cout << "Дружественная функция передачи данных классу Account \n из Figure, Friends, Music, Messages, Like:\n" << endl;
+	Account MyAccount;
+	Figure MyFigure;
+	Friends MyFriends;
+	Music MyMusic;
+	Messages MyMessages;
+	Like MyLike;
 
+	MyAccount.InitAccount("Anton", "Petrov", "Petrov22@gmail.com", "111222333");
+
+	MyAccount.OutputAccount();
+
+	cout << "\n\nПередача данных:\n" << endl;
+	MyFigure.InitFigure(2, 1);
+	MyFriends.InitFriends("Ivan", "Ivanov");
+	MyMusic.MUSICinit("Kukushka","Choi");
+	MyMessages.InitMessages("Ivan Ivanov", "Anton Petrov", "Hello!");
+	MyLike.Set(5);
+
+	pushing(MyAccount, MyFigure, MyFriends, MyMusic, MyMessages, MyLike);
+
+	MyAccount.OutputAccount();
 }

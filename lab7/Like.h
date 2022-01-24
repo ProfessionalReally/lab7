@@ -4,6 +4,18 @@
 #include <stdio.h>
 #include <conio.h>
 #include <string>
+#include "Account.h"
+#include "Friends.h"
+#include "Music.h"
+#include "Figure.h"
+#include "Messages.h"
+
+class Account;
+class Figure;
+class Friends;
+class Music;
+class Messages;
+
 using namespace std;
 class Like
 {
@@ -43,5 +55,6 @@ public:
     // Вывод на дисплей содержимого списка
     static void reprint(void);
 
+    friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);
 };
 

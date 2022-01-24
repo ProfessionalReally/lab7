@@ -3,12 +3,21 @@
 #include <iostream>
 #include <stdio.h>
 #include <conio.h>
+#include "Account.h"
+#include "Friends.h"
+#include "Music.h"
+#include "Messages.h"
+#include "Like.h"
 
+class Account;
+class Friends;
+class Music;
+class Messages;
+class Like;
 using namespace std;
 class Figure
 {
 private:
-
 	int figure = 0; //Фигура
 	int color = 0; //Цвет
 public:
@@ -33,5 +42,7 @@ public:
 	void OutputFigure(); //Вывод данных о фигуре
 
 	void DeleteFigure(); //Удаление данных о фигуре
+
+	friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);
 };
 

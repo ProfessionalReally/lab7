@@ -5,9 +5,18 @@
 #include <conio.h>
 #include <string>
 #include <locale.h>
-
+#include "Account.h"
+#include "Friends.h"
+#include "Figure.h"
+#include "Messages.h"
+#include "Like.h"
 using namespace std;
 
+class Account;
+class Figure;
+class Friends;
+class Messages;
+class Like;
 class Music
 {
 private:
@@ -30,4 +39,6 @@ public:
 	void OutputMusic(); //Вывод данных о музыке
 
 	void DeleteMusic(); //Удаление данных о музыке
+
+	friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);
 };

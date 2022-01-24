@@ -5,32 +5,43 @@
 #include <conio.h>
 #include <string>
 #include <locale.h>
+#include "Figure.h"
+#include "Friends.h"
+#include "Music.h"
+#include "Messages.h"
 
+
+class Figure;
+class Friends;
+class Music;
+class Messages;
+class Like;
 
 using namespace std;
 class Account
 {
 private:
 	//ACCOUNT
-	string fromWhom = ""; //Имя
-	string surfromWhom = ""; //Фамилия
+	string name = ""; //Имя
+	string surname = ""; //Фамилия
 	string email = ""; //Почта
 	string password = ""; //Пароль
-
-public:
 	//FIGURE
 	int FigureFigure = 0; //Фигура
 	int FigureColor = 0; //Цвет
 	//FRIENDS
-	string FriendsfromWhom[2]; //Имя
-	string FriendsSurfromWhom[2]; //Фамилия
+	string FriendsName; //Имя
+	string FriendsSurname; //Фамилия
 	//MUSIC
-	string MusicTitle[2]; //Название
-	string MusicExecutor[2]; //Исполнитель
+	string MusicTitle; //Название
+	string MusicExecutor; //Исполнитель
 	//MESSAGES
 	string MessagestoWhom = ""; //Кому сообщение
 	string MessagesfromWhom = ""; //От кого сообщение
 	string Messagesmessage = ""; //Текст сообщения
+	//LIKE
+	int LikeAmount = 0; //Количество лайков
+public:
 
 	Account(); //Конструктор
 
@@ -49,4 +60,8 @@ public:
 	void OutputAccount(); //Вывод данных о аккаунте
 
 	void DeleteAccount(); //Удаление данных о аккаунта
+
+	// Дружественная функция обмена кординатами классов Account, Figure, Friends, Music, Messages
+	friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);
+
 };
