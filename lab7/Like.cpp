@@ -76,6 +76,12 @@ void Like::reprint(void)
     }
 }
 
+// Создание нового списка
+void Like::NewL()
+{
+    lastLike = NULL;
+}
+
 // Деструктор
 Like::~Like()
 {
