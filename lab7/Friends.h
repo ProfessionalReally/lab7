@@ -25,13 +25,27 @@ private:
 public:
 	Friends(); //Конструктор
 
+	Friends(string NAME); //Констуктор с одним параметром
+
+	Friends(string NAME, string SURNAME); //Конструктор с параметрами
+
+	//Конструктор копии
+	Friends(const Friends& Friend);
+
+	// Перегрузка функции присваивания
+	Friends& operator=(const Friends& Friend);
+
+	void Setname(string NAME); //Установить имя
+
+	void Setsurname(string SURNAME); //Установить фамилию
+
 	~Friends(); //Деструктор
 
 	// Функции получения данных из полей
 	string Getname();
 	string Getsurname();
 
-	void InitFriends(string NAME, string SURNAME); //Инициализация друзей
+	//void InitFriends(string NAME, string SURNAME); //Инициализация друзей
 
 	void InputFriends(); //Изменение данных о друзьях
 
@@ -41,4 +55,7 @@ public:
 
 	// Дружественная функция обмена полями классов Account, Figure, Friends, Music, Messages, Like
 	friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);
+
+	
+	
 };

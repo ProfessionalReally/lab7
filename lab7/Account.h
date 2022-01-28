@@ -45,15 +45,33 @@ public:
 
 	Account(); //Конструктор
 
+	Account(string NAME); //Конструктор с одним параметром
+
+	Account(string NAME, string SURNAME, string EMAIL, string PASSWORD); //Конструктор с параметрами
+
+	// Установить имя
+	void Setname(string NAME);
+	
+	// Установить фамилию
+	void Setsurname(string SURNAME);
+
+	// Установить почту
+	void Setemail(string EMAIL);
+	
+	// Установить пароль
+	void Setpassword(string PASSWORD);
+	
+
+
 	// Функции получения данных из полей
-	string GetfromWhom();
-	string GetsurfromWhom();
+	string Getname();
+	string Getsurname();
 	string Getemail();
 	string Getpassword();
 
 	~Account(); //Деструктор
 
-	void InitAccount(string fromWhom, string SURfromWhom, string EMAIL, string PASSWORD); //Инициализация аккаунта
+	//void InitAccount(string fromWhom, string SURfromWhom, string EMAIL, string PASSWORD); //Инициализация аккаунта
 
 	void InputAccount(); //Изменение данных о аккаунте
 

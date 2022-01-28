@@ -34,11 +34,13 @@ public:
     // Конструктор
     Like(int AMOUNT);
 
+    void Setamount(int AMOUNT); //Установить количество оценок
+
     // Деструктор
     ~Like();
 
     // Инициализация структуры 
-    void Set(int v);
+    //void Set(int v);
 
     // Получение количества
     int Get();

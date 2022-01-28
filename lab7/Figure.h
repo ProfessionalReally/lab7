@@ -24,6 +24,14 @@ public:
 
 	Figure(); //Конструктор
 
+	Figure(int FIGURE); //Конструктор с одним параметром
+
+	Figure(int FIGURE, int COLOR); //Конструктор с параметрами
+
+	void Setfigure(int FIGURE); //Установить фигуру
+
+	void Setcolor(int COLOR); //Установить цвет
+
 	~Figure(); //Деструктор
 
 	// Функции получения данных из полей
@@ -35,7 +43,7 @@ public:
 
 	void GetcolorL(int* COLOR);
 
-	void InitFigure(int FIGURE, int COLOR); //Инициализация фигуры
+	//void InitFigure(int FIGURE, int COLOR); //Инициализация фигуры
 
 	void InputFigure(); //Изменение данных о фигуре
 

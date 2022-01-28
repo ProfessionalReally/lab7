@@ -6,11 +6,34 @@ Figure::Figure() //Конструктор
 	color = 0; //Цвет
 }
 
+Figure::Figure(int FIGURE) //Конструктор с одним параметром
+{
+	figure = FIGURE; //Фигура
+	color = 0; //Цвет
+}
+
+Figure::Figure(int FIGURE, int COLOR) //Конструктор с одним параметром
+{
+	figure = FIGURE; //Фигура
+	color = COLOR; //Цвет
+}
+
+void Figure::Setfigure(int FIGURE) //Установить фигуру
+{
+	figure = FIGURE;
+}
+
+void Figure::Setcolor(int COLOR) //Установить цвет
+{
+	color = COLOR;
+}
+
 // Функции получения данных из полей
 int Figure::Getfigure()
 {
 	return this->figure;
 }
+
 int Figure::Getcolor()
 {
 	return this->color;
@@ -27,11 +50,11 @@ void Figure::GetcolorL(int* COLOR)
 	*COLOR = color;
 }
 
-void Figure::InitFigure(int FIGURE, int COLOR) //Инициализация фигуры
+/*void Figure::InitFigure(int FIGURE, int COLOR) //Инициализация фигуры
 {
 	this->figure = FIGURE;
 	this->color = COLOR;
-}
+}*/
 
 void Figure::InputFigure() //Изменение данных о фигуре
 {

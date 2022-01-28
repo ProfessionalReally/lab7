@@ -26,13 +26,21 @@ public:
 
 	Music(); //Конструктор
 
+	Music(string TITLE); //Конструктор с одним параметром
+
+	Music(string TITLE, string EXECUTOR); //Конструктор с параметрами
+
+	void Settitle(string TITLE); //Установить название
+
+	void Setexecutor(string EXECUTOR); //Установить исполнителя
+
 	~Music(); //Деструктор
 
 	// Функции получения данных из полей
 	string Gettitle();
 	string Getexecutor();
 
-	void MUSICinit(string EXECUTOR, string TITLE); //Инициализация музыки
+	//void MUSICinit(string EXECUTOR, string TITLE); //Инициализация музыки
 
 	void MUSICinput(); //Изменение данных о музыке
 

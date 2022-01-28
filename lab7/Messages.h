@@ -23,6 +23,16 @@ private:
 public:
 	Messages(); //Конструктор
 
+	Messages(string TOWHOM); //Конструктор с одним параметром
+
+	Messages(string TOWHOM, string FROMWHOM, string MESSAGE); //Конструктор с параметрами
+
+	void SettoWhom(string TOWHOM); //Установить кому сообщение
+
+	void SetfromWhom(string FROMWHOM); //Установить от кого сообщение
+
+	void Setmessage(string MESSAGE); //Установить текст сообщения
+
 	~Messages(); //Деструктор
 
 	// Функции получения данных из полей
@@ -37,7 +47,7 @@ public:
 
 	void GetmessageLink(string& MESSAGE);
 
-	void InitMessages(string TOWHOM, string FROMWHOM, string MESSAGE); //Инициализация сообщения
+	//void InitMessages(string TOWHOM, string FROMWHOM, string MESSAGE); //Инициализация сообщения
 
 	void InputMessages(); //Изменение данных о сообщении
 

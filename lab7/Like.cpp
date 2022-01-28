@@ -11,11 +11,16 @@ Like::Like(int AMOUNT)
     this->amount = AMOUNT;
 }
 
+void Like::Setamount(int AMOUNT) //Установить количество оценок
+{
+    amount = AMOUNT;
+}
+
 // Инициализация структуры 
-void Like::Set(int v)
+/*void Like::Set(int v)
 {
     amount = v;
-}
+}*/
 
 // Получение количества
 int Like::Get()

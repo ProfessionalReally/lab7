@@ -6,6 +6,28 @@ Music::Music() //Конструктор
 	executor = ""; //Исполнитель
 }
 
+Music::Music(string TITLE) //Конструктор с одним параметром
+{
+	title = TITLE; //Название
+	executor = ""; //Исполнитель
+}
+
+Music::Music(string TITLE, string EXECUTOR) //Конструктор с параметрами
+{
+	title = TITLE; //Название
+	executor = EXECUTOR; //Исполнитель
+}
+
+void Music::Settitle(string TITLE) //Установить название
+{
+	title = TITLE; //Название
+}
+
+void Music::Setexecutor(string EXECUTOR) //Установить исполнителя
+{
+	executor = EXECUTOR; //Исполнитель
+}
+
 // Функции получения данных из полей
 string Music::Gettitle()
 {
@@ -17,11 +39,11 @@ string Music::Getexecutor()
 	return this->executor;
 }
 
-void Music::MUSICinit(string EXECUTOR, string TITLE) //Инициализация музыки
+/*void Music::MUSICinit(string EXECUTOR, string TITLE) //Инициализация музыки
 {
 	this->executor = EXECUTOR;
 	this->title = TITLE;
-}
+}*/
 
 void Music::MUSICinput() //Изменение данных о музыке
 {

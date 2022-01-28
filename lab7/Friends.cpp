@@ -6,6 +6,53 @@ Friends::Friends() //Конструктор
 	surname = ""; //Фамилия
 }
 
+Friends::Friends(string NAME) //Констуктор с одним параметром
+{
+	name = NAME; //Имя
+	surname = ""; //Фамилия
+}
+
+Friends::Friends(string NAME, string SURNAME) //Конструктор с параметрами
+{
+	name = NAME; //Имя
+	surname = SURNAME; //Фамилия
+}
+
+//Конструктор копии
+Friends::Friends(const Friends& Friend)
+{
+	// Поверхностное копирование, т.к. это не указатель
+	name = Friend.name;
+
+	// Поверхностное копирование, т.к. это не указатель
+	surname = Friend.surname;
+}
+
+// Перегрузка функции присваивания
+Friends& Friends::operator=(const Friends& Friend)
+{
+	// Проверка на самоприсваивание
+	if (this == &Friend)
+		return *this;
+
+	name = Friend.name;
+
+	surname = Friend.surname;
+
+	return *this;
+
+}
+
+void Friends::Setname(string NAME) //Установить имя
+{
+	name = NAME; //Имя
+}
+
+void Friends::Setsurname(string SURNAME) //Установить фамилию
+{
+	surname = SURNAME; //Фамилия
+}
+
 // Функции получения данных из полей
 string Friends::Getname()
 {
@@ -17,11 +64,11 @@ string Friends::Getsurname()
 	return this->surname;
 }
 
-void Friends::InitFriends(string NAME, string SURNAME) //Инициализация друзей
+/*void Friends::InitFriends(string NAME, string SURNAME) //Инициализация друзей
 {
 	this->name = NAME;
 	this->surname = SURNAME;
-}
+}*/
 
 void Friends::InputFriends() //Изменение данных о друзьях
 {

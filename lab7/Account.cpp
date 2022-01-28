@@ -18,12 +18,74 @@ Account::Account() //Конструктор
 	LikeAmount = 0;
 }
 
+Account::Account(string NAME) //Конструктор с одним параметром
+{
+	name = NAME;
+	surname = ""; 
+	email = ""; 
+	password = ""; 
+	FigureFigure = 0;
+	FigureColor = 0;
+	FriendsName = "";
+	FriendsSurname = "";
+	MusicTitle = "";
+	MusicExecutor = "";
+	MessagestoWhom = "";
+	MessagesfromWhom = "";
+	Messagesmessage = "";
+	LikeAmount = 0;
+}
+
+Account::Account(string NAME, string SURNAME, string EMAIL, string PASSWORD) //Конструктор с параметрами
+{
+	name = NAME;
+	surname = SURNAME;
+	email = EMAIL;
+	password = PASSWORD;
+	FigureFigure = 0;
+	FigureColor = 0;
+	FriendsName = "";
+	FriendsSurname = "";
+	MusicTitle = "";
+	MusicExecutor = "";
+	MessagestoWhom = "";
+	MessagesfromWhom = "";
+	Messagesmessage = "";
+	LikeAmount = 0;
+}
+
+
+// Установить имя
+void Account::Setname(string NAME)
+{
+	name = NAME;
+}
+
+// Установить фамилию
+void Account::Setsurname(string SURNAME)
+{
+	surname = SURNAME;
+}
+
+// Установить почту
+void Account::Setemail(string EMAIL)
+{
+	email = EMAIL;
+}
+
+// Установить пароль
+void Account::Setpassword(string PASSWORD)
+{
+	password = PASSWORD;
+}
+
+
 // Функции получения данных из полей
-string Account::GetfromWhom()
+string Account::Getname()
 {
 	return this->name;
 }
-string Account::GetsurfromWhom()
+string Account::Getsurname()
 {
 	return this->surname;
 }
@@ -36,13 +98,13 @@ string Account::Getpassword()
 	return this->password;
 }
 
-void Account::InitAccount(string NAME, string SURNAME, string EMAIL, string PASSWORD) //Инициализация аккаунта
+/*void Account::InitAccount(string NAME, string SURNAME, string EMAIL, string PASSWORD) //Инициализация аккаунта
 {
 	this->name = NAME;
 	this->surname = SURNAME;
 	this->email = EMAIL;
 	this->password = PASSWORD;
-}
+}*/
 
 void Account::InputAccount() //Изменение данных о аккаунте
 {

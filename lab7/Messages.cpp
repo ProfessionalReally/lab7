@@ -7,8 +7,36 @@ Messages::Messages() //Конструктор
 	message = ""; //Текст сообщения
 }
 
-// Функции получения данных из полей
+Messages::Messages(string TOWHOM) //Конструктор с одним параметром
+{
+	toWhom = TOWHOM; //Кому сообщение
+	fromWhom = ""; //От кого сообщение
+	message = ""; //Текст сообщения
+}
 
+Messages::Messages(string TOWHOM, string FROMWHOM, string MESSAGE) //Конструктор с параметрами
+{
+	toWhom = TOWHOM; //Кому сообщение
+	fromWhom = FROMWHOM; //От кого сообщение
+	message = MESSAGE; //Текст сообщения
+}
+
+void Messages::SettoWhom(string TOWHOM) //Установить кому сообщение
+{
+	toWhom = TOWHOM; //Кому сообщение
+}
+
+void Messages::SetfromWhom(string FROMWHOM) //Установить от кого сообщение
+{
+	fromWhom = FROMWHOM; //От кого сообщение
+}
+
+void Messages::Setmessage(string MESSAGE) //Установить текст сообщения
+{
+	message = MESSAGE; //Текст сообщения
+}
+
+// Функции получения данных из полей
 string Messages::GettoWhom()
 {
 	return this->toWhom;
@@ -39,12 +67,12 @@ void Messages::GetmessageLink(string& MESSAGE)
 	MESSAGE = this->message;
 }
 
-void Messages::InitMessages(string TOWHOM, string FROMWHOM, string MESSAGE) //Инициализация сообщения
+/*void Messages::InitMessages(string TOWHOM, string FROMWHOM, string MESSAGE) //Инициализация сообщения
 {
 	this->toWhom = TOWHOM;
 	this->fromWhom = FROMWHOM;
 	this->message = MESSAGE;
-}
+}*/
 
 void Messages::InputMessages() //Изменение данных о сообщении
 {
