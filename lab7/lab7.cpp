@@ -353,7 +353,7 @@ int main()
 	cout << ("") << endl;
 	FriendsTestCopy2.OutputFriends();
 	cout << ("\n\n") << endl;*/
-Like like1;
+/*Like like1;
 
 cout << "Лабораторная 10\n" << endl;
 cout << "Введите количество оценок - число в пределах от 0 до бессконечности!\n" << endl;
@@ -364,6 +364,33 @@ while (like1.Get() == 0)
 }
 
 cout << "Введенное количество оценок: " << like1.Get() << endl;
+*/
+Like like1[3], like2[2][2];
 
+// Присваивание
+//=================================
+like1[0] = 3;
+like1[1] = 4;
+like1[2] = 5;
+
+int base = 4;
+
+for (int i = 0; i < 2; i++)
+	for (int j = 0; j < 2; j++)
+		like2[i][j] = base + j;
+//=================================
+
+// Вывод
+//=================================
+cout << "Одномерный массив размером [3]" << endl;
+for (int i = 0; i < 3; i++)
+	like1[i].Displayamount();
+
+cout << endl;
+cout << "Двумерный массив размером [2][2]" << endl;
+for (int i = 0; i < 2; i++)
+	for (int j = 0; j < 2; j++)
+		like2[i][j].Displayamount();
+//=================================
 
 }
