@@ -146,7 +146,7 @@ int main()
 	Like::reprint();
 	cout << ("\n===================================\n");
 	*/
-	Account account1;
+	/*Account account1;
 	Account account2("John");
 	Account account3("Anton", "Petrov", "Petrov22@gmail.com", "111222333");
 
@@ -352,6 +352,18 @@ int main()
 	FriendsTestCopy1.OutputFriends();
 	cout << ("") << endl;
 	FriendsTestCopy2.OutputFriends();
-	cout << ("\n\n") << endl;
+	cout << ("\n\n") << endl;*/
+Like like1;
+
+cout << "Лабораторная 10\n" << endl;
+cout << "Введите количество оценок - число в пределах от 0 до бессконечности!\n" << endl;
+
+while (like1.Get() == 0)
+{
+	like1.InpLike();
+}
+
+cout << "Введенное количество оценок: " << like1.Get() << endl;
+
 
 }

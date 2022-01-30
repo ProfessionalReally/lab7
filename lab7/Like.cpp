@@ -8,12 +8,17 @@ Like::Like()
 // Конструктор
 Like::Like(int AMOUNT)
 {
-    this->amount = AMOUNT;
+    this->amount = 0;
+    if (IsRightLike(AMOUNT))
+        this->amount = AMOUNT;
+
 }
 
 void Like::Setamount(int AMOUNT) //Установить количество оценок
 {
-    amount = AMOUNT;
+    this->amount = 0;
+    if (IsRightLike(AMOUNT))
+        this->amount = AMOUNT;
 }
 
 // Инициализация структуры 
@@ -34,9 +39,40 @@ void Like::InpLike()
     string Lik;
     cout << "Please enter a amount likes: ";
     cin >> Lik;
-    amount = stoi(Lik);
+    try                                                 // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch          
+    {
+        for (int i = 0; i < Lik.length(); i++) 
+        {
+            if ((Lik[i] < '0') || (Lik[i] > '9'))
+                throw "It string is not number!";       // выбрасывается исключение типа const char*
+        }
+        Setamount(stoi(Lik));
+    }
+    catch (const char* exception)                       // обработчик исключений типа const char*
+    {
+        std::cerr << "Error: " << exception << '\n';
+    }
     cout << endl;
 }
+
+// Проверка числа на подходящее для оценки
+bool Like::IsRightLike(int like)
+{
+    bool res = true;
+    try                                     // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch
+    {
+        if (like < 0)          // Если пользователь ввел неверное число, то выбрасывается исключение
+            throw "Incorrect amount.";       // выбрасывается исключение типа const char*
+    }
+    catch (const char* exception)           // обработчик исключений типа const char*
+    {
+        std::cerr << "Error: " << exception << '\n';
+        res = false;
+        return res;
+    }
+    return res;
+}
+
 
 // Вывод данных из структуры
 void Like::Displayamount()
