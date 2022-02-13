@@ -9,7 +9,7 @@
 #include "Friends.h"
 #include "Music.h"
 #include "Messages.h"
-
+#include "Human.h"
 
 class Figure;
 class Friends;
@@ -18,12 +18,12 @@ class Messages;
 class Like;
 
 using namespace std;
-class Account
+class Account : public Human
 {
 private:
 	//ACCOUNT
-	string name = ""; //Имя
-	string surname = ""; //Фамилия
+	//string name = ""; //Имя
+	//string surname = ""; //Фамилия
 	string email = ""; //Почта
 	string password = ""; //Пароль
 	//FIGURE
@@ -50,10 +50,10 @@ public:
 	Account(string NAME, string SURNAME, string EMAIL, string PASSWORD); //Конструктор с параметрами
 
 	// Установить имя
-	void Setname(string NAME);
+	//void Setname(string NAME);
 	
 	// Установить фамилию
-	void Setsurname(string SURNAME);
+	//void Setsurname(string SURNAME);
 
 	// Установить почту
 	void Setemail(string EMAIL);
@@ -64,22 +64,28 @@ public:
 
 
 	// Функции получения данных из полей
-	string Getname();
-	string Getsurname();
+	//string Getname();
+	//string Getsurname();
 	string Getemail();
 	string Getpassword();
 
 	~Account(); //Деструктор
 
-	//void InitAccount(string fromWhom, string SURfromWhom, string EMAIL, string PASSWORD); //Инициализация аккаунта
+	//void InitAccount(string NAME, string SURNAME, string EMAIL, string PASSWORD); //Инициализация аккаунта
 
 	void InputAccount(); //Изменение данных о аккаунте
 
 	void OutputAccount(); //Вывод данных о аккаунте
 
-	void DeleteAccount(); //Удаление данных о аккаунта
+	//void DeleteAccount(); //Удаление данных о аккаунта
 
 	// Дружественная функция обмена полями классов Account, Figure, Friends, Music, Messages, Like
 	friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);
+
+	// Перегрузка оператора '=' (Account = Human)
+	Account& operator=(Human& human);
+
+	// Виртуальная функция вывода сообщения на екран, кем является человек (пользователь, друг)
+	virtual string WhoIs();
 
 };

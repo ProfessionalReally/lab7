@@ -365,7 +365,7 @@ while (like1.Get() == 0)
 
 cout << "Введенное количество оценок: " << like1.Get() << endl;
 */
-Like like1[3], like2[2][2];
+/*Like like1[3], like2[2][2];
 
 // Присваивание
 //=================================
@@ -392,5 +392,93 @@ for (int i = 0; i < 2; i++)
 	for (int j = 0; j < 2; j++)
 		like2[i][j].Displayamount();
 //=================================
+*/
+/*
+Friends friend1("Anton", "Ivanov");
+Human human1("Irina", "Isakova");
 
+
+cout << "3) Продемонстрировать перегрузку метода базового" << endl;
+cout << "  класса в производном классе(с вызовом метода базового" << endl;
+cout << "  класса и без такого вызова)" << endl << endl;
+
+human1.DisplayInfo();
+friend1.DisplayInfo();
+cout << endl;
+human1.SayHello();
+friend1.SayHello();
+
+cout << "4) Продемонстрировать в конструкторе производного класса с параметрами вызов конструктора базового класса" << endl;
+Friends friend2("Marina", "Ivanova");
+friend2.DisplayInfo();
+
+
+Friends friend3("Ilya", "Nemchov");
+Human human3("Artur", "Vasilev");
+cout << "5) Выполнить перегрузку оператора присваивания объекту" << endl;
+cout << "производного класса объектов базового класса" << endl << endl;
+
+human3.DisplayInfo();
+friend3.DisplayInfo();
+
+cout << endl;
+
+friend3 = human3;
+
+human3.DisplayInfo();
+friend3.DisplayInfo();
+
+Friends friend4("Alina", "Ivanova");
+cout << "6) Заменить методы Display используя операции << для C++" << endl << endl;
+cout << friend4 << endl;
+
+
+cout << "7) Придумать разумное использование виртуальных функций и создать их в вашем проекте." << endl << endl;
+
+
+human1.DisplayInfo();
+friend1.DisplayInfo();
+cout << endl;
+human1.SayHello();
+friend1.SayHello();
+
+Human Humane("Vasilisa", "Egorova");
+Friends Friend("John", "Friderih");
+Human* pHuman = &Friend;
+Friends* pFriend = &Friend;
+Human* pHuman2 = &Humane;
+
+cout << "========================================================" << endl;
+cout << endl;
+cout << "Объект класса Friends" << endl;
+Friend.DisplayInfo();
+cout << endl;
+cout << "Указатель класса Human на класс Friends" << endl;
+pHuman->DisplayInfo();
+cout << endl;
+cout << "Указатель класса Human на класс Friends" << endl;
+pHuman2->DisplayInfo();
+cout << endl;
+cout << "Вызов виртуальной функции через не виртуальную базового класса" << endl;
+cout << "от объекта класса Friends" << endl;
+Friend.SayHello();
+cout << endl;
+cout << "Вызов виртуальной функции через не виртуальную базового класса" << endl;
+cout << "от объекта класса Human" << endl;
+Humane.SayHello();
+cout << endl;
+cout << "от указателя Human на объект класса Friends" << endl;
+cout << pHuman->WhoIs() << endl;
+cout << endl;
+cout << "от указателя Human на объект класса Human" << endl;
+cout << pHuman2->WhoIs() << endl;
+cout << endl;
+cout << "от указателя Friends на объект класса Friends" << endl;
+cout << pFriend->WhoIs() << endl;
+*/
+
+Friends friend1("Иванова", "Марина");
+friend1.InputFriends();
+cout << endl;
+friend1.DisplayInfo();
 }

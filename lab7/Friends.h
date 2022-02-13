@@ -10,6 +10,7 @@
 #include "Music.h"
 #include "Messages.h"
 #include "Like.h"
+#include "Human.h"
 using namespace std;
 
 class Account;
@@ -17,11 +18,11 @@ class Figure;
 class Music;
 class Messages;
 class Like;
-class Friends
+class Friends : public Human
 {
 private:
-	string name = ""; //Имя
-	string surname = ""; //Фамилия
+	//string name = ""; //Имя
+	//string surname = ""; //Фамилия
 public:
 	Friends(); //Конструктор
 
@@ -35,23 +36,32 @@ public:
 	// Перегрузка функции присваивания
 	Friends& operator=(const Friends& Friend);
 
-	void Setname(string NAME); //Установить имя
+	//void Setname(string NAME); //Установить имя
 
-	void Setsurname(string SURNAME); //Установить фамилию
+	//void Setsurname(string SURNAME); //Установить фамилию
 
 	~Friends(); //Деструктор
 
 	// Функции получения данных из полей
-	string Getname();
-	string Getsurname();
+	//string Getname();
+	//string Getsurname();
 
 	//void InitFriends(string NAME, string SURNAME); //Инициализация друзей
 
 	void InputFriends(); //Изменение данных о друзьях
 
-	void OutputFriends(); //Вывод данных о друзьях
+	virtual void OutputFriends(); //Вывод данных о друзьях
 
-	void DeleteFriends(); //Удаление друзей
+	//void DeleteFriends(); //Удаление друзей
+
+	// Виртуальная функция вывода сообщения на экран, кем является человек (неизвестный, пользователь, друг)
+	/*virtual*/ string WhoIs();
+
+	// Перегрузка оператора '=' (Friends = Human)
+	Friends& operator=(Human& human);
+
+		// Расширение действий оператора <<
+		friend std::ostream & operator<< (std::ostream & out, const Friends & Friend);
 
 	// Дружественная функция обмена полями классов Account, Figure, Friends, Music, Messages, Like
 	friend void pushing(Account& account, Figure& figure, Friends& friends, Music& music, Messages& message, Like& like);

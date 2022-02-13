@@ -18,7 +18,7 @@ Account::Account() //Конструктор
 	LikeAmount = 0;
 }
 
-Account::Account(string NAME) //Конструктор с одним параметром
+Account::Account(string NAME) : Human(NAME, "") //Конструктор с одним параметром
 {
 	name = NAME;
 	surname = ""; 
@@ -36,7 +36,7 @@ Account::Account(string NAME) //Конструктор с одним параметром
 	LikeAmount = 0;
 }
 
-Account::Account(string NAME, string SURNAME, string EMAIL, string PASSWORD) //Конструктор с параметрами
+Account::Account(string NAME, string SURNAME, string EMAIL, string PASSWORD) : Human(NAME, SURNAME) //Конструктор с параметрами
 {
 	name = NAME;
 	surname = SURNAME;
@@ -56,16 +56,16 @@ Account::Account(string NAME, string SURNAME, string EMAIL, string PASSWORD) //К
 
 
 // Установить имя
-void Account::Setname(string NAME)
+/*void Account::Setname(string NAME)
 {
 	name = NAME;
-}
+}*/
 
 // Установить фамилию
-void Account::Setsurname(string SURNAME)
+/*void Account::Setsurname(string SURNAME)
 {
 	surname = SURNAME;
-}
+}*/
 
 // Установить почту
 void Account::Setemail(string EMAIL)
@@ -81,7 +81,7 @@ void Account::Setpassword(string PASSWORD)
 
 
 // Функции получения данных из полей
-string Account::Getname()
+/*string Account::Getname()
 {
 	return this->name;
 }
@@ -89,6 +89,7 @@ string Account::Getsurname()
 {
 	return this->surname;
 }
+*/
 string Account::Getemail()
 {
 	return this->email;
@@ -108,10 +109,12 @@ string Account::Getpassword()
 
 void Account::InputAccount() //Изменение данных о аккаунте
 {
-	printf_s("\nPlease enter a name: ");
+	/*printf_s("\nPlease enter a name: ");
 	cin >> name;
 	printf_s("\nPlease enter a surname: ");
 	cin >> surname;
+	*/
+	Human::InpHuman();
 	printf_s("\nPlease enter a email: ");
 	cin >> email;
 	printf_s("\nPlease enter a password: ");
@@ -121,7 +124,11 @@ void Account::InputAccount() //Изменение данных о аккаунте
 void Account::OutputAccount() //Вывод данных о аккаунте
 {
 	printf_s("\t\t\tACCOUNT\n");
-	if ((name[0] == 0) && (surname[0] == 0) && (email[0] == 0) && (password[0] == 0))
+	Human::DisplayInfo();
+	cout << "Email: " << email << endl;
+	cout << "Password: " << password << endl;
+	
+	/*if ((this->name[0] == 0) && (this->surname[0] == 0) && (this->email[0] == 0) && (this->password[0] == 0))
 	{
 		printf_s("\nName: empty");
 		printf_s("\nSurname: empty");
@@ -130,11 +137,11 @@ void Account::OutputAccount() //Вывод данных о аккаунте
 	}
 	else
 	{
-		cout << "Name: " << name << endl;
-		cout << "Surname: " << surname << endl;
+		cout << "Name: " << this->name << endl;
+		cout << "Surname: " << this->surname << endl;
 		cout << "Email: " << email << endl;
 		cout << "Password: " << password << endl;
-	}
+	}*/
 	printf_s("\n\t\t\tFIGURE\n");
 	if (FigureFigure == 0)
 		printf_s("Figure: Empty\n");
@@ -200,7 +207,7 @@ void Account::OutputAccount() //Вывод данных о аккаунте
 	printf_s("\n");
 }
 
-void Account::DeleteAccount() //Удаление аккаунта
+/*void Account::DeleteAccount() //Удаление аккаунта
 {
 	this->name = "";
 	this->surname = "";
@@ -216,7 +223,7 @@ void Account::DeleteAccount() //Удаление аккаунта
 	this->MessagesfromWhom = "";
 	this->Messagesmessage = "";
 	this->LikeAmount = 0;
-}
+}*/
 
 Account::~Account() //Деструктор
 {
@@ -236,6 +243,21 @@ void pushing(Account& account, Figure& figure, Friends& friends, Music& music, M
 	account.MessagestoWhom = message.toWhom;
 	account.Messagesmessage = message.message;
 	account.LikeAmount = like.amount;
+}
+
+// Перегрузка оператора '=' (Account = Persone)
+Account& Account::operator=(Human& human)
+{
+	this->name = human.GetName();
+	this->surname = human.GetSurname();
+	
+	return *this;
+}
+
+// Виртуальная функция вывода сообщения на екран, кем является человек (пользователь, друг)
+string Account::WhoIs()
+{
+	return "пользователь";
 }
 
 
